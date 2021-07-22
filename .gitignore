@@ -2,7 +2,8 @@
 *.log
 bin/
 .dbdata/
-__pycache__
+cert/
+__pycache__/
 MANIFEST
 dist/
 docs/_build/
