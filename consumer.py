@@ -17,7 +17,7 @@ def callback(ch, method, properties, body):
     print('recieve in admin')
     id = json.loads(body)
     print(id)
-    product = Product.objects.get(id)
+    product = Product.objects.get(id=id)
     product.like = product.like + 1
     product.save()
     print('product likes update')
@@ -25,7 +25,7 @@ def callback(ch, method, properties, body):
 
 channel.basic_consume(queue='admin', on_message_callback=callback, auto_ack=True)
 
-print('Start Consuming')
+print('Start Consuming in admin')
 
 channel.start_consuming()
 
